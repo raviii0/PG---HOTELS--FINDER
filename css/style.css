@@ -1,0 +1,146 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+/* Navbar */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:#0f172a;
+    color:#fff;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+}
+
+.logo i{
+    color:#38bdf8;
+    margin-right:8px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+.login-btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.login-btn:hover{
+    background:#0284c7;
+}
+
+/* Hero Section */
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(rgba(15,23,42,.7),rgba(15,23,42,.7)),
+    url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.search-box{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.search-box input{
+    width:350px;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+.search-box button{
+    padding:15px 25px;
+    border:none;
+    border-radius:8px;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.search-box button:hover{
+    background:#0284c7;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.nav-links{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:35px;
+}
+
+.search-box{
+    flex-direction:column;
+    align-items:center;
+}
+
+.search-box input{
+    width:90%;
+}
+
+}
