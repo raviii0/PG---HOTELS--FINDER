@@ -401,3 +401,305 @@ button:hover{
 .card:hover img{
     transform:scale(1.05);
 }
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px 20px;
+
+    background:
+    linear-gradient(rgba(15,23,42,.80),rgba(15,23,42,.90)),
+    url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.login-card{
+    width:430px;
+    max-width:100%;
+    padding:40px;
+    background:rgba(255,255,255,.97);
+    border-radius:22px;
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+    text-align:center;
+}
+
+.login-logo{
+    width:75px;
+    height:75px;
+    margin:0 auto 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#38bdf8;
+    color:white;
+
+    border-radius:50%;
+    font-size:30px;
+
+    box-shadow:0 10px 25px rgba(56,189,248,.35);
+}
+
+.login-card h1{
+    color:#0f172a;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.login-subtitle{
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+.login-input{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    border:1px solid #dbe2ea;
+    border-radius:10px;
+
+    padding:14px 16px;
+    margin-bottom:16px;
+
+    background:#f8fafc;
+
+    transition:.3s;
+}
+
+.login-input:focus-within{
+    border-color:#38bdf8;
+    box-shadow:0 0 0 3px rgba(56,189,248,.12);
+}
+
+.login-input i{
+    color:#64748b;
+}
+
+.login-input input{
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:15px;
+}
+
+.login-options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:13px;
+    margin:5px 0 22px;
+}
+
+.login-options label{
+    color:#64748b;
+}
+
+.login-options a{
+    color:#0284c7;
+    text-decoration:none;
+}
+
+.login-submit{
+    width:100%;
+    padding:14px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#38bdf8;
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(56,189,248,.25);
+
+    transition:.3s;
+}
+
+.login-submit:hover{
+    background:#0284c7;
+    transform:translateY(-2px);
+}
+
+.login-divider{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:28px 0 20px;
+
+    color:#94a3b8;
+    font-size:13px;
+}
+
+.login-divider::before,
+.login-divider::after{
+    content:"";
+    height:1px;
+    flex:1;
+    background:#e2e8f0;
+}
+
+.register-text{
+    color:#64748b;
+    font-size:14px;
+}
+
+.register-text a{
+    color:#0284c7;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.back-home{
+    display:inline-block;
+    margin-top:22px;
+
+    color:#64748b;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.back-home:hover{
+    color:#0284c7;
+}
+
+
+/* Login Mobile */
+
+@media(max-width:500px){
+
+    .login-card{
+        padding:30px 22px;
+    }
+
+    .login-card h1{
+        font-size:25px;
+    }
+
+    .login-options{
+        flex-direction:column;
+        gap:10px;
+        align-items:flex-start;
+    }
+
+}
+/* =========================
+   SEARCH PAGE
+========================= */
+
+.search-page{
+    min-height:100vh;
+    padding:70px 8%;
+    background:#f5f7fb;
+}
+
+.search-page > h1{
+    text-align:center;
+    font-size:42px;
+    color:#0f172a;
+    margin-bottom:35px;
+}
+
+.search-filter{
+    max-width:1100px;
+    margin:0 auto 60px;
+
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+
+    padding:20px;
+
+    background:white;
+    border-radius:16px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
+}
+
+.search-filter input,
+.search-filter select{
+    flex:1;
+    min-width:200px;
+
+    padding:15px;
+
+    border:1px solid #dbe2ea;
+    border-radius:9px;
+
+    outline:none;
+    font-size:15px;
+    background:#fff;
+}
+
+.search-filter input:focus,
+.search-filter select:focus{
+    border-color:#38bdf8;
+}
+
+.search-filter button{
+    padding:15px 25px;
+
+    border:none;
+    border-radius:9px;
+
+    background:#38bdf8;
+    color:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.search-filter button:hover{
+    background:#0284c7;
+    transform:translateY(-2px);
+}
+
+.results h2{
+    text-align:center;
+    color:#0f172a;
+    font-size:32px;
+    margin-bottom:35px;
+}
+
+
+/* Search Page Mobile */
+
+@media(max-width:650px){
+
+    .search-page{
+        padding:50px 5%;
+    }
+
+    .search-page > h1{
+        font-size:30px;
+    }
+
+    .search-filter{
+        flex-direction:column;
+    }
+
+    .search-filter input,
+    .search-filter select,
+    .search-filter button{
+        width:100%;
+    }
+
+}
