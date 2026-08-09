@@ -703,3 +703,211 @@ button:hover{
     }
 
 }
+/* =========================
+   PROPERTY DETAILS PAGE
+========================= */
+
+.details-page{
+    min-height:100vh;
+    padding:70px 8%;
+    background:#f5f7fb;
+
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.property-image{
+    overflow:hidden;
+    border-radius:22px;
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+}
+
+.property-image img{
+    width:100%;
+    height:550px;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+
+.property-image:hover img{
+    transform:scale(1.04);
+}
+
+.property-info{
+    background:#fff;
+    padding:40px;
+    border-radius:22px;
+    box-shadow:0 15px 40px rgba(0,0,0,.10);
+}
+
+.property-type{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:20px;
+    background:#e0f2fe;
+    color:#0284c7;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.property-info h1{
+    font-size:40px;
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+.location{
+    color:#64748b;
+    margin-bottom:18px;
+}
+
+.location i{
+    color:#38bdf8;
+    margin-right:6px;
+}
+
+.rating{
+    display:inline-block;
+    padding:8px 12px;
+    background:#fef3c7;
+    border-radius:8px;
+    color:#92400e;
+    margin-bottom:22px;
+}
+
+.rating span{
+    color:#64748b;
+    margin-left:8px;
+    font-size:13px;
+}
+
+.property-info h2{
+    font-size:32px;
+    color:#0f172a;
+    margin-bottom:20px;
+}
+
+.property-info h2 small{
+    font-size:15px;
+    color:#64748b;
+    font-weight:400;
+}
+
+.description{
+    color:#64748b;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.property-info h3{
+    font-size:22px;
+    color:#0f172a;
+    margin-bottom:15px;
+}
+
+.amenities{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.amenities span{
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    padding:10px 14px;
+
+    background:#f1f5f9;
+    border-radius:9px;
+
+    color:#475569;
+    font-size:14px;
+}
+
+.amenities i{
+    color:#0284c7;
+}
+
+.property-buttons{
+    display:flex;
+    gap:12px;
+}
+
+.property-buttons button{
+    flex:1;
+    padding:15px;
+
+    border:none;
+    border-radius:10px;
+
+    color:white;
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contact-btn{
+    background:#0f172a;
+}
+
+.contact-btn:hover{
+    background:#1e293b;
+    transform:translateY(-2px);
+}
+
+.booking-btn{
+    background:#38bdf8;
+}
+
+.booking-btn:hover{
+    background:#0284c7;
+    transform:translateY(-2px);
+}
+
+
+/* Details Page Mobile */
+
+@media(max-width:850px){
+
+    .details-page{
+        grid-template-columns:1fr;
+        padding:50px 5%;
+    }
+
+    .property-image img{
+        height:400px;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .property-info{
+        padding:25px;
+    }
+
+    .property-info h1{
+        font-size:30px;
+    }
+
+    .property-info h2{
+        font-size:26px;
+    }
+
+    .property-image img{
+        height:300px;
+    }
+
+    .property-buttons{
+        flex-direction:column;
+    }
+
+}
