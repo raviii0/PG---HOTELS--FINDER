@@ -1,41 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Search - PG & Hotels Finder</title>
+    <title>Search PG & Hotels</title>
 
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 
 <body>
 
 <header>
 
-<nav class="navbar">
+    <nav class="navbar">
 
-    <div class="logo">
-        <i class="fa-solid fa-hotel"></i>
-        PG & Hotels Finder
-    </div>
+        <div class="logo">
+            <i class="fa-solid fa-hotel"></i>
+            PG & Hotels Finder
+        </div>
 
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="search.html">PG</a></li>
-        <li><a href="search.html">Hotels</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
+        <ul class="nav-links">
 
-    <a href="login.html" class="login-btn">
-        Login
-    </a>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
 
-</nav>
+            <li>
+                <a href="search.html">PG</a>
+            </li>
+
+            <li>
+                <a href="search.html">Hotels</a>
+            </li>
+
+            <li>
+                <a href="#">About</a>
+            </li>
+
+            <li>
+                <a href="#">Contact</a>
+            </li>
+
+        </ul>
+
+        <a href="login.html" class="login-btn">
+            Login
+        </a>
+
+    </nav>
 
 </header>
 
@@ -44,28 +63,59 @@
 
     <h1>Find Your Perfect Stay</h1>
 
+
     <div class="search-filter">
 
         <input
             type="text"
+            id="locationInput"
             placeholder="Enter city or location">
 
-        <select>
-            <option>All</option>
-            <option>PG</option>
-            <option>Hotel</option>
+
+        <select id="typeFilter">
+
+            <option value="all">
+                All
+            </option>
+
+            <option value="pg">
+                PG
+            </option>
+
+            <option value="hotel">
+                Hotel
+            </option>
+
         </select>
 
-        <select>
-            <option>Any Price</option>
-            <option>Under ₹5,000</option>
-            <option>₹5,000 - ₹10,000</option>
-            <option>Above ₹10,000</option>
+
+        <select id="priceFilter">
+
+            <option value="all">
+                Any Price
+            </option>
+
+            <option value="5000">
+                Under ₹5,000
+            </option>
+
+            <option value="10000">
+                ₹5,000 - ₹10,000
+            </option>
+
+            <option value="10001">
+                Above ₹10,000
+            </option>
+
         </select>
 
-        <button>
+
+        <button id="searchButton">
+
             <i class="fa-solid fa-magnifying-glass"></i>
+
             Search
+
         </button>
 
     </div>
@@ -73,55 +123,131 @@
 
     <div class="results">
 
-        <h2>Available Properties</h2>
+        <h2>
+            Available Properties
+        </h2>
 
-        <div class="card-container">
 
-            <div class="card">
+        <div
+            class="card-container"
+            id="propertyResults">
 
-                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80">
 
-                <h3>Comfort PG</h3>
+            <!-- PG 1 -->
 
-                <p>📍 Ayodhya</p>
+            <div
+                class="card property-card"
+                data-location="ayodhya"
+                data-type="pg"
+                data-price="6500">
 
-                <p>₹6,500 / Month</p>
+                <img
+                    src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80"
+                    alt="Comfort PG">
 
-                <button>View Details</button>
+                <h3>
+                    Comfort PG
+                </h3>
+
+                <p>
+                    📍 Ayodhya
+                </p>
+
+                <p>
+                    ₹6,500 / Month
+                </p>
+
+                <a
+                    href="details.html"
+                    class="card-details-btn">
+
+                    View Details
+
+                </a>
+
+            </div>
+
+
+            <!-- HOTEL 1 -->
+
+            <div
+                class="card property-card"
+                data-location="lucknow"
+                data-type="hotel"
+                data-price="2500">
+
+                <img
+                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80"
+                    alt="Royal Hotel">
+
+                <h3>
+                    Royal Hotel
+                </h3>
+
+                <p>
+                    📍 Lucknow
+                </p>
+
+                <p>
+                    ₹2,500 / Night
+                </p>
+
+                <a
+                    href="details.html"
+                    class="card-details-btn">
+
+                    View Details
+
+                </a>
 
             </div>
 
 
-            <div class="card">
+            <!-- PG 2 -->
 
-                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80">
+            <div
+                class="card property-card"
+                data-location="delhi"
+                data-type="pg"
+                data-price="5500">
 
-                <h3>Royal Hotel</h3>
+                <img
+                    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80"
+                    alt="Student PG">
 
-                <p>📍 Lucknow</p>
+                <h3>
+                    Student PG
+                </h3>
 
-                <p>₹2,500 / Night</p>
+                <p>
+                    📍 Delhi
+                </p>
 
-                <button>View Details</button>
+                <p>
+                    ₹5,500 / Month
+                </p>
+
+                <a
+                    href="details.html"
+                    class="card-details-btn">
+
+                    View Details
+
+                </a>
 
             </div>
 
-
-            <div class="card">
-
-                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80">
-
-                <h3>Student PG</h3>
-
-                <p>📍 Delhi</p>
-
-                <p>₹5,500 / Month</p>
-
-                <button>View Details</button>
-
-            </div>
 
         </div>
+
+
+        <p
+            id="noResults"
+            style="display:none; text-align:center; margin-top:30px;">
+
+            No properties found.
+
+        </p>
 
     </div>
 
@@ -131,4 +257,5 @@
 <script src="js/script.js"></script>
 
 </body>
+
 </html>
