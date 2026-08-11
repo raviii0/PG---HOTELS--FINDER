@@ -1,88 +1,115 @@
 // ===============================
 // PG & Hotels Finder
-// Basic Login & Register System
+// Search System
 // ===============================
 
-const registerForm = document.getElementById("registerForm");
+const searchButton = document.getElementById("searchButton");
 
-if (registerForm) {
+if (searchButton) {
 
-    registerForm.addEventListener("submit", function(event) {
+    searchButton.addEventListener("click", function () {
 
-        event.preventDefault();
+        const location =
+            document.getElementById("locationInput").value
+            .trim()
+            .toLowerCase();
 
-        const inputs = registerForm.querySelectorAll("input");
+        const type =
+            document.getElementById("typeFilter").value;
 
-        const name = inputs[0].value.trim();
-        const email = inputs[1].value.trim();
-        const mobile = inputs[2].value.trim();
-        const password = inputs[3].value;
-        const confirmPassword = inputs[4].value;
+        const price =
+            document.getElementById("priceFilter").value;
 
-        if (password !== confirmPassword) {
-            alert("Passwords do not match!");
-            return;
-        }
+        const cards =
+            document.querySelectorAll(".property-card");
 
-        const user = {
-            name: name,
-            email: email,
-            mobile: mobile,
-            password: password
-        };
+        const noResults =
+            document.getElementById("noResults");
 
-        localStorage.setItem("pgFinderUser", JSON.stringify(user));
-
-        alert("Account created successfully!");
-
-        window.location.href = "login.html";
-    });
-}
+        let found = 0;
 
 
-// ===============================
-// Login
-// ===============================
+        cards.forEach(function (card) {
 
-const loginForm = document.getElementById("loginForm");
+            const cardLocation =
+                card.dataset.location.toLowerCase();
 
-if (loginForm) {
+            const cardType =
+                card.dataset.type;
 
-    loginForm.addEventListener("submit", function(event) {
+            const cardPrice =
+                Number(card.dataset.price);
 
-        event.preventDefault();
 
-        const inputs = loginForm.querySelectorAll("input");
+            // Location Match
+            const locationMatch =
+                location === "" ||
+                cardLocation.includes(location);
 
-        const email = inputs[0].value.trim();
-        const password = inputs[1].value;
 
-        const savedUser =
-            JSON.parse(localStorage.getItem("pgFinderUser"));
+            // Type Match
+            const typeMatch =
+                type === "all" ||
+                cardType === type;
 
-        if (!savedUser) {
 
-            alert("Account not found. Please create an account first.");
+            // Price Match
+            let priceMatch = true;
 
-            window.location.href = "register.html";
 
-            return;
-        }
+            if (price === "5000") {
 
-        if (
-            email === savedUser.email &&
-            password === savedUser.password
-        ) {
+                priceMatch =
+                    cardPrice < 5000;
 
-            alert("Login successful! Welcome " + savedUser.name);
+            }
+            else if (price === "10000") {
 
-            window.location.href = "index.html";
+                priceMatch =
+                    cardPrice >= 5000 &&
+                    cardPrice <= 10000;
+
+            }
+            else if (price === "10001") {
+
+                priceMatch =
+                    cardPrice > 10000;
+
+            }
+
+
+            // Final Result
+            if (
+                locationMatch &&
+                typeMatch &&
+                priceMatch
+            ) {
+
+                card.style.display = "block";
+
+                found++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        // No Results Message
+
+        if (found === 0) {
+
+            noResults.style.display = "block";
 
         } else {
 
-            alert("Invalid email or password!");
+            noResults.style.display = "none";
 
         }
 
     });
+
 }
